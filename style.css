@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bgcolor: #333;
+    --PrimaryText: #fff;
+    --SecondaryText: #666;
+    --PrimaryColor: rgb(255, 174, 0);
+
+
+}
+
+h1 svg{
+    fill : var(--PrimaryColor);
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto Mono', monospace; */
+    background-color: var(--bgcolor);
+    font-size: 1.5rem;
+}
+h1{
+    color: var(--PrimaryColor);
+    text-align: center;
+}
+main{
+    width: 1000px;
+    position: relative;
+    margin: 50px auto;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 6px 30px;
+    
+    margin-top: 30px;
+}
+#buttons{
+    text-align: right;
+}
+#info{
+    height: 50px;
+    width: 50px;
+    color: var(--PrimaryColor);
+    /* background-color: rgb(87, 87, 87);
+    padding-left: 10px;
+    padding-top: 8px; */
+    border-radius: 50%;
+    font-weight: bold;
+}
+button{
+    /* background: rgba(255, 255, 255, .2);
+    border: 0;
+    color: rgba(255, 255, 255, .5);
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer; */
+    padding: 20px 25px;
+  background-color: rgb(185, 155, 91);
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
+button:hover{
+    background: rgb(255, 174, 0);;
+    color: #050801;
+    box-shadow: 0 0 3px rgb(255, 174, 0),
+                0 0 20px rgb(255, 174, 0),
+                0 0 20px rgb(255, 174, 0),
+                0 0 100px rgb(255, 174, 0);
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+
+div#game{
+    line-height: 35px;
+    height: 210px;
+    overflow: hidden;
+    position: relative;
+}
+
+#words{
+    filter: blur(5px);
+    color: var(--SecondaryText);
+}
+
+#words{
+    filter: blur(0);
+}
+
+#focus-error{
+    position: absolute;
+    text-align: center;
+    padding-top: 35px;
+    inset: 0;
+}
+
+#focus-error{
+    display: none;
+}
+
+div.word{
+    display: inline-block;
+    font-family: 'Roboto Mono',monospace;
+    margin: 0 5px;
+
+}
+
+/* for letter class which i make in javascript */
+.letter.correct{
+    color: #fff;
+}
+.letter.incorrect{
+    color: #f55;
+}
+
+@keyframes blink{
+  0%{
+     opacity: 1;
+  }
+  50%{
+     opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+#cursor{
+    width: 2px;
+    height: 1.6rem;
+    background:var(--PrimaryColor);
+    position: fixed;
+    top: 229px;
+    /* left: 660px; */
+    
+    animation: blink .3s infinite;
+}
+
+#game.over #words{
+   opacity: .2;
+}
+
+@media screen and (max-width: 1062px){
+    main{
+        width: 600px;
+        position: relative;
+        margin: 50px auto;
+    }
+}
+
+@media screen and (max-width: 624px){
+    main{
+        width: 400px;
+        position: relative;
+        margin: 50px auto;
+    }
+}
+
+@media screen and (max-width: 420px){
+    main{
+        width: 300px;
+        position: relative;
+        margin: 50px auto;
+    }
+    h1{
+        color: var(--PrimaryColor);
+        text-align: center;
+        font-size: 2rem;
+    }
+    button{
+         padding: 10px 10px;
+    }
+    div.word{}
+    .header{
+        margin-top: 55px;
+    }
+}
+
+@media screen and (max-width: 328px){
+    main{
+        width: 250px;
+        position: relative;
+        margin: 50px auto;
+    }
+    h1{
+        color: var(--PrimaryColor);
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    button{
+         padding: 10px 10px;
+    }
+    div.word{
+       
+    }
+    .header{
+        margin-top: 65px;
+
+    }
+}
